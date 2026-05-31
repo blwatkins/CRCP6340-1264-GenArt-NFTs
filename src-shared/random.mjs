@@ -84,12 +84,7 @@ export class Random {
         }
 
         const index = Random.randomInt(0, elements.length);
-
-        if (index >= 0 && index < elements.length) {
-            return elements[index];
-        } else {
-            return elements[0];
-        }
+        return elements[index];
     }
 }
 
