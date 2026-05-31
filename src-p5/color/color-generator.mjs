@@ -80,9 +80,18 @@ export class GrayColorGenerator extends ColorGenerator {
     /**
      * @param {{min: number, max: number}} range
      */
-    constructor(range) {
+constructor(range = { min: 0, max: 255 }) {
         super();
-        this.#range = { ...range };
+
+        if (!range || typeof range !== 'object' || typeof range.min !== 'number' || typeof range.max !== 'number') {
+            throw new TypeError('range must be an object with numeric min and max properties.');
+        }
+
+        if (range.min >= range.max) {
+            throw new RangeError('range.min must be less than range.max.');
+        }
+
+        this.#range = { min: range.min, max: range.max };
     }
 
     /**
