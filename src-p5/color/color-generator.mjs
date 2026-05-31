@@ -114,6 +114,10 @@ export class PaletteColorGenerator extends ColorGenerator {
         this.#colors.push(...colors);
     }
 
+    /**
+     * @param {p5} ctx
+     * @returns {p5.Color}
+     */
     getColor(ctx) {
         const index = Random.randomInt(0, this.#colors.length);
         return ctx.color(this.#colors[index]);
