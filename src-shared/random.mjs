@@ -23,8 +23,14 @@
 import { loadSeed } from './seeded-random.mjs';
 
 export class Random {
+    /**
+     * @type {() => number}
+     */
     static #randomFunction = Math.random;
 
+    /**
+     * @param {() => number} randomFunction
+     */
     static set rand(randomFunction) {
         if (!randomFunction || typeof randomFunction !== 'function') {
             Random.#randomFunction = Math.random;
@@ -34,20 +40,56 @@ export class Random {
         Random.#randomFunction = randomFunction;
     }
 
+    /**
+     * @param {number} min
+     * @param {number} max
+     * @returns {number}
+     */
     static random(min, max) {
         return (Random.#randomFunction() * (max - min)) + min;
     }
 
+    /**
+     * @param {number} min
+     * @param {number} max
+     * @return {number}
+     */
     static randomFloat(min, max) {
         return Random.random(min, max);
     }
 
+    /**
+     * @param {number} min
+     * @param {number} max
+     * @returns {number}
+     */
     static randomInt(min, max) {
         return Math.floor(Random.randomFloat(min, max));
     }
 
+    /**
+     * @returns {boolean}
+     */
     static randomBoolean() {
         return Random.randomFloat(0, 1) < 0.5;
+    }
+
+    /**
+     * @param {unknown[]} elements
+      * @returns {unknown}
+     */
+    static randomElement(elements) {
+        if (!Array.isArray(elements) || elements.length === 0) {
+            throw new Error('Elements must be a non-empty array.');
+        }
+
+        const index = Random.randomInt(0, elements.length);
+
+        if (index >= 0 && index <= elements.length) {
+            return elements[index];
+        } else {
+            return elements[0];
+        }
     }
 }
 
