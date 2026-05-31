@@ -22,49 +22,7 @@
 
 import { Random } from '../../src-shared/random.mjs';
 
-import {
-    azureColorGenerator,
-    blackColorGenerator,
-    blueColorGenerator,
-    cyanColorGenerator,
-    grayColorGenerator,
-    greenColorGenerator,
-    limeColorGenerator,
-    magentaColorGenerator,
-    orangeColorGenerator,
-    plumColorGenerator,
-    purpleColorGenerator,
-    redColorGenerator,
-    tealColorGenerator,
-    whiteColorGenerator,
-    yellowColorGenerator, PaletteColorGenerator
-} from './color-generator.mjs';
-
-/**
- * @type {ColorGenerator[]}
- */
-const colorGenerators = [
-    redColorGenerator,
-    orangeColorGenerator,
-    yellowColorGenerator,
-    greenColorGenerator,
-    tealColorGenerator,
-    cyanColorGenerator,
-    blueColorGenerator,
-    purpleColorGenerator,
-    magentaColorGenerator,
-    limeColorGenerator,
-    plumColorGenerator,
-    azureColorGenerator,
-    blackColorGenerator,
-    grayColorGenerator,
-    whiteColorGenerator,
-    new PaletteColorGenerator(['#0A2342', '#2CA58D', '#84BC9C', '#FFFDF7', '#F46197']),
-    new PaletteColorGenerator(['#DABFFF', '#907AD6', '#4F518C', '#2C2A4A', '#7FDEFF']),
-    new PaletteColorGenerator(['#F72585', '#7209B7', '#3A0CA3', '#4361EE', '#4CC9F0']),
-    new PaletteColorGenerator(['#FFD9DA', '#EA638C', '#89023E', '#30343F', '#1B2021']),
-    new PaletteColorGenerator(['#CDB4DB', '#FFC8DD', '#FFAFCC', '#BDE0FE', '#A2D2FF'])
-];
+import { colorGenerators } from './color-generators.mjs';
 
 /**
  * @returns {ColorGenerator}
@@ -97,7 +55,7 @@ export class ColorSelector {
             this.#colorGenerators.push(getRandomGenerator());
         }
 
-        this.#setBackgroundColor(ctx);
+        this.#background = this.#setBackgroundColor(ctx);
     }
 
     /**

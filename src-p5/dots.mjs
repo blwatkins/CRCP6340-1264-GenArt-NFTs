@@ -36,7 +36,7 @@ export function dots(ctx) {
             this.d = Random.randomFloat(5, 200);
             this.color = colorSelector.getColor(ctx);
             this.color.setAlpha(Random.randomInt(85, 255));
-            this.strokeWeight = Random.randomInt(1, 6);
+            this.strokeWeight = Random.randomFloat(0.5, 25);
 
             if (dotType === 'fill') {
                 this.isColorFill = true;
@@ -93,9 +93,9 @@ export function dots(ctx) {
         const canvas = ctx.createCanvas(canvasWidth, canvasHeight);
         decorateCanvas(canvas);
 
-        totalCircles = Random.randomInt(5, 500);
+        totalCircles = Random.randomInt(1, 500);
 
-        colorSelector = new ColorSelector(ctx, Random.randomInt(1, 4));
+        colorSelector = new ColorSelector(ctx, Random.randomInt(1, 5));
 
         dotType = Random.randomElement(dotTypes);
 
