@@ -111,12 +111,7 @@ export class PaletteColorGenerator extends ColorGenerator {
 
     getColor(ctx) {
         const index = Random.randomInt(0, this.#colors.length);
-
-        if (index >= 0 && index < this.#colors.length) {
-            return ctx.color(this.#colors[index]);
-        } else {
-            return ctx.color(0);
-        }
+        return ctx.color(this.#colors[index]);
     }
 }
 
