@@ -42,15 +42,20 @@ export class RGBColorGenerator extends ColorGenerator {
         blue: { min: 0, max: 255 }
     };
 
-    /**
-     * @param {{red: {min: number, max: number}, green: {min: number, max: number}, blue: {min: number, max: number}}} ranges
-     */
-    constructor(ranges) {
-        super();
-        this.#ranges.red = { ...ranges.red };
-        this.#ranges.green = { ...ranges.green };
-        this.#ranges.blue = { ...ranges.blue };
+/**
+ * @param {{red: {min: number, max: number}, green: {min: number, max: number}, blue: {min: number, max: number}}} ranges
+ */
+constructor(ranges) {
+    super();
+
+    if (!ranges || typeof ranges !== 'object' || !ranges.red || !ranges.green || !ranges.blue) {
+        throw new TypeError('ranges must be an object with red, green, and blue range definitions.');
     }
+
+    this.#ranges.red = { ...ranges.red };
+    this.#ranges.green = { ...ranges.green };
+    this.#ranges.blue = { ...ranges.blue };
+}
 
     /**
      * @param {p5} ctx
