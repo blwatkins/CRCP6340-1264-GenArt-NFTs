@@ -74,18 +74,23 @@ export class Random {
         return Random.randomFloat(0, 1) < 0.5;
     }
 
-    /**
-     * @param {unknown[]} elements
-     * @returns {unknown}
-     */
-    static randomElement(elements) {
-        if (!Array.isArray(elements) || elements.length === 0) {
-            throw new Error('Elements must be a non-empty array.');
-        }
-
-        const index = Random.randomInt(0, elements.length);
-        return elements[index];
+/**
+ * @template T
+ * @param {T[]} elements
+ * @returns {T}
+ */
+static randomElement(elements) {
+    if (!Array.isArray(elements)) {
+        throw new TypeError('elements must be an array.');
     }
+
+    if (elements.length === 0) {
+        throw new RangeError('elements must be a non-empty array.');
+    }
+
+    const index = Random.randomInt(0, elements.length);
+    return elements[index];
+}
 }
 
 /**
