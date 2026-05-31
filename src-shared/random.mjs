@@ -41,8 +41,8 @@ export class Random {
     }
 
     /**
-     * @param {number} min
-     * @param {number} max
+     * @param {number} min - Inclusive lower bound.
+     * @param {number} max - Exclusive upper bound.
      * @returns {number}
      */
     static random(min, max) {
@@ -50,22 +50,22 @@ export class Random {
     }
 
     /**
-     * @param {number} min
-     * @param {number} max
+     * @param {number} min - Inclusive lower bound.
+     * @param {number} max - Exclusive upper bound.
      * @returns {number}
      */
     static randomFloat(min, max) {
         return Random.random(min, max);
     }
 
-/**
- * @param {number} min Inclusive lower bound.
- * @param {number} max Exclusive upper bound.
- * @returns {number}
- */
-static randomInt(min, max) {
-    return Math.floor(Random.randomFloat(min, max));
-}
+    /**
+     * @param {number} min - Inclusive lower bound.
+     * @param {number} max - Exclusive upper bound.
+     * @returns {number}
+     */
+    static randomInt(min, max) {
+        return Math.floor(Random.randomFloat(min, max));
+    }
 
     /**
      * @returns {boolean}
@@ -74,23 +74,23 @@ static randomInt(min, max) {
         return Random.randomFloat(0, 1) < 0.5;
     }
 
-/**
- * @template T
- * @param {T[]} elements
- * @returns {T}
- */
-static randomElement(elements) {
-    if (!Array.isArray(elements)) {
-        throw new TypeError('elements must be an array.');
-    }
+    /**
+     * @template T
+     * @param {T[]} elements
+     * @returns {T}
+     */
+    static randomElement(elements) {
+        if (!Array.isArray(elements)) {
+            throw new TypeError('elements must be an array.');
+        }
 
-    if (elements.length === 0) {
-        throw new RangeError('elements must be a non-empty array.');
-    }
+        if (elements.length === 0) {
+            throw new RangeError('elements must be a non-empty array.');
+        }
 
-    const index = Random.randomInt(0, elements.length);
-    return elements[index];
-}
+        const index = Random.randomInt(0, elements.length);
+        return elements[index];
+    }
 }
 
 /**
