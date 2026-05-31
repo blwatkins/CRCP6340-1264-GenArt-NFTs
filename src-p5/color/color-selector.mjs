@@ -81,8 +81,9 @@ export class ColorSelector {
         return Random.randomElement(this.#colorGenerators);
     }
 
-    /**
+/**
      * @param {p5} ctx
+     * @returns {p5.Color}
      */
     #setBackgroundColor(ctx) {
         const colors = [ctx.color(0), ctx.color(255), this.getColor(ctx)];
