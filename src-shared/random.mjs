@@ -58,14 +58,14 @@ export class Random {
         return Random.random(min, max);
     }
 
-    /**
-     * @param {number} min
-     * @param {number} max
-     * @returns {number}
-     */
-    static randomInt(min, max) {
-        return Math.floor(Random.randomFloat(min, max));
-    }
+/**
+ * @param {number} min Inclusive lower bound.
+ * @param {number} max Exclusive upper bound.
+ * @returns {number}
+ */
+static randomInt(min, max) {
+    return Math.floor(Random.randomFloat(min, max));
+}
 
     /**
      * @returns {boolean}
