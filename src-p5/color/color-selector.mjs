@@ -47,8 +47,8 @@ export class ColorSelector {
      * @param {number} generatorCount
      */
     constructor(ctx, generatorCount = 1) {
-        if (typeof generatorCount !== 'number' || generatorCount < 1) {
-            throw new RangeError('generatorCount must be a number greater than or equal to 1.');
+        if (!Number.isInteger(generatorCount) || generatorCount < 1) {
+            throw new RangeError('generatorCount must be an integer greater than or equal to 1.');
         }
 
         for (let i = 0; i < generatorCount; i++) {
