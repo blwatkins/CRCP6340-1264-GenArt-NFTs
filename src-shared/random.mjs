@@ -52,7 +52,7 @@ export class Random {
     /**
      * @param {number} min
      * @param {number} max
-     * @return {number}
+     * @returns {number}
      */
     static randomFloat(min, max) {
         return Random.random(min, max);
