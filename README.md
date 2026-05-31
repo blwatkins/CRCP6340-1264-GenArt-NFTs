@@ -1,6 +1,6 @@
-# CRCP 6340 Generative Art NFT Project
+# CRCP 6340 Generative Art NFT Projects - Summer 2026
 
-A template for the generative art NFT project for CRCP 6340 - Creative Coding for Application Development.
+Implementations of generative art NFT projects for CRCP 6340 - Creative Coding for Application Development; Summer 2026 term.
 
 ## Attributions
 
