@@ -76,7 +76,7 @@ export class Random {
 
     /**
      * @param {unknown[]} elements
-      * @returns {unknown}
+     * @returns {unknown}
      */
     static randomElement(elements) {
         if (!Array.isArray(elements) || elements.length === 0) {
@@ -85,7 +85,7 @@ export class Random {
 
         const index = Random.randomInt(0, elements.length);
 
-        if (index >= 0 && index <= elements.length) {
+        if (index >= 0 && index < elements.length) {
             return elements[index];
         } else {
             return elements[0];
