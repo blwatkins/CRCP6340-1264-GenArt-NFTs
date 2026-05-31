@@ -126,7 +126,6 @@ export const colorGenerators = [
     new PaletteColorGenerator(['#EAEAEA', '#893168', '#4A1942', '#2E1C2B', '#050404']),
     new PaletteColorGenerator(['#FF7100', '#FD9702', '#E102FF', '#AE03FF', '#000000']),
     new PaletteColorGenerator(['#2BD011', '#8929BF', '#FD7708', '#FDE500', '#000000']),
-    new PaletteColorGenerator(['#2BD011', '#8929BF', '#FD7708', '#FDE500', '#000000']),
     new PaletteColorGenerator(['#000000', '#ff6c00', '#9700f8', '#1dff00', '#000000']),
     new PaletteColorGenerator(['#000000', '#D04000', '#EB7800', '#7200A5', '#1C9A00']),
     new PaletteColorGenerator(['#FF7518', '#855294', '#721F92', '#3D0d52', '#1D002D']),
