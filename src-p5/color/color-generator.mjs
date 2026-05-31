@@ -80,7 +80,7 @@ export class GrayColorGenerator extends ColorGenerator {
     /**
      * @param {{min: number, max: number}} range
      */
-constructor(range = { min: 0, max: 255 }) {
+    constructor(range = { min: 0, max: 255 }) {
         super();
 
         if (!range || typeof range !== 'object' || typeof range.min !== 'number' || typeof range.max !== 'number') {

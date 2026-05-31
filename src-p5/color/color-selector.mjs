@@ -81,7 +81,7 @@ export class ColorSelector {
         return Random.randomElement(this.#colorGenerators);
     }
 
-/**
+    /**
      * @param {p5} ctx
      * @returns {p5.Color}
      */
